@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#070e17" />
+  <meta name="description" content="FARO:09, una aventura narrativa cinematográfica de exploración y misterio. Primer capítulo jugable." />
+  <title>FARO:09 — La última voz</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main id="stage" class="stage">
+    <canvas id="world" aria-label="Escenario interactivo de FARO:09"></canvas>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+    <header class="topbar" id="topbar" hidden>
+      <div class="brand"><span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M2 25h28M8 20l8-15 8 15M12 15h8M16 6v22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span>FARO<span class="accent">:09</span></span></div>
+      <div id="chapterLabel" class="chapter-label">CAPÍTULO 01 <span class="chapter-separator">/</span> MAR MUERTO</div>
+      <div class="top-actions"><button class="icon-button" id="journalButton" title="Registro (J)"><span class="icon-glyph">▤</span><span class="desktop-only">REGISTRO</span></button><button class="icon-button" id="soundButton" title="Activar/desactivar audio (M)">♫</button><button class="icon-button" id="pauseButton" title="Pausar (Esc)">Ⅱ</button></div>
+    </header>
+
+    <div class="status" id="status" hidden><div class="status-tag"><span class="blue-dot"></span> <span class="status-caption">TRANSMISIÓN 09</span> <span class="status-dash">—</span> <span id="objectiveText">Encontrá la fuente de energía.</span></div></div>
+    <div class="interaction" id="interaction" hidden><span class="key-chip">E</span><div><strong id="interactName">INTERACTUAR</strong><small id="interactSub">Acercate</small></div></div>
+    <div class="game-foot" id="gameFoot" hidden><span>← → MOVERSE <i>·</i> E INTERACTUAR <i>·</i> J REGISTRO</span><span id="fragmentCount">0 / 4 ARCHIVOS RECUPERADOS</span></div>
+
+    <div id="mainMenu" class="menu-overlay">
+      <div class="menu-inner"><div class="eyebrow"><span class="line"></span> UNA AVENTURA NARRATIVA <span class="season">PRÓLOGO JUGABLE</span></div><h1>FARO<span class="colon">:</span><br><span class="title-zero">09</span></h1><div class="title-rule"></div><p class="menu-kicker">LA ÚLTIMA VOZ</p><p class="menu-copy">Doce años después del Gran Silencio, un faro que debería estar apagado empieza a transmitir la voz de tu hermana.</p><div class="menu-buttons"><button id="startButton" class="primary-btn"><span id="startLabel">COMENZAR HISTORIA</span><span>↗</span></button><button id="newButton" class="ghost-btn" hidden>NUEVA PARTIDA</button></div><div class="menu-micro"><span class="tiny-dot"></span> UNA HISTORIA SOBRE LO QUE PERMANECE CUANDO TODO SE APAGA</div></div>
+      <div class="menu-side"><span class="side-line"></span><span>09 / 12 / 2197</span><span>COORDENADAS 43° N — SECTOR 9</span></div>
+      <div class="menu-credit">DISEÑADO COMO UNA EXPERIENCIA ORIGINAL DE CIENCIA FICCIÓN <span>·</span> DEMO VERTICAL 01</div>
+    </div>
+
+    <div id="storyPanel" class="story-panel" hidden aria-live="polite"><div class="story-box"><div class="story-overline" id="speaker">REGISTRO DE AUDIO</div><p id="storyText"></p><div class="story-bottom"><span id="storyIndex">01 / 03</span><button id="nextStory" class="story-next">CONTINUAR <span>↗</span></button></div></div></div>
+
+    <div id="puzzleOverlay" class="modal-backdrop" hidden><section class="puzzle-modal" role="dialog" aria-modal="true" aria-labelledby="puzzleTitle"><div class="modal-head"><span class="overline" id="puzzleTag">PROTOCOLO 03 / RESTAURACIÓN</span><button id="closePuzzle" class="close-btn" title="Cerrar">✕</button></div><h2 id="puzzleTitle">Restablecer energía</h2><p id="puzzleDescription">Girá los nodos para recuperar la conexión.</p><div id="puzzleContent"></div></section></div>
+    <div id="pauseOverlay" class="modal-backdrop" hidden><section class="pause-modal" role="dialog" aria-modal="true" aria-label="Pausa"><span class="overline">TRANSMISIÓN SUSPENDIDA</span><h2>PAUSA<span class="accent">.</span></h2><p>El faro seguirá esperando.</p><button id="resumeButton" class="primary-btn">REANUDAR <span>↗</span></button><button id="pauseJournal" class="ghost-btn">VER REGISTRO</button><button id="backToMenu" class="ghost-btn">MENÚ PRINCIPAL</button></section></div>
+    <div id="journalOverlay" class="modal-backdrop" hidden><section class="journal-modal" role="dialog" aria-modal="true" aria-labelledby="journalTitle"><div class="modal-head"><span class="overline">BITÁCORA DE VERA / ARCHIVO LOCAL</span><button id="closeJournal" class="close-btn" title="Cerrar">✕</button></div><h2 id="journalTitle">Fragmentos del silencio<span class="accent">.</span></h2><p>Mensajes de un mundo que dejó de comunicarse.</p><div id="journalList" class="journal-list"></div></section></div>
+    <div id="choiceOverlay" class="modal-backdrop" hidden><section class="choice-modal" role="dialog" aria-modal="true" aria-labelledby="choiceTitle"><span class="overline">PROTOCOLO FINAL / LA DECISIÓN ES TUYA</span><h2 id="choiceTitle">¿Qué merece sobrevivir?</h2><p>La torre solo tiene energía para una última transmisión.</p><div class="choice-grid"><button id="truthChoice" class="choice-card"><span class="choice-id">01 / LA VERDAD</span><strong>Liberar la señal</strong><small>Transmitir lo ocurrido y dejar que la voz descanse. El mundo sabrá por qué la costa quedó en silencio.</small><span class="choice-arrow">↗</span></button><button id="echoChoice" class="choice-card alternate"><span class="choice-id">02 / EL ECO</span><strong>Conservar la voz</strong><small>Proteger el último archivo humano de la costa. Mientras el faro siga encendido, nadie escuchará el silencio.</small><span class="choice-arrow">↗</span></button></div><button id="cancelChoice" class="choice-back">VOLVER AL FARO</button></section></div>
+    <div id="endingOverlay" class="ending-overlay" hidden><div class="ending-content"><div id="endingTag" class="eyebrow">FINAL 01 / LA VERDAD</div><h2 id="endingTitle">Que nos encuentren.</h2><div class="ending-line"></div><p id="endingText"></p><blockquote id="endingQuote"></blockquote><div class="ending-buttons"><button id="replayButton" class="primary-btn">VOLVER A EMPEZAR <span>↗</span></button><button id="endingMenuButton" class="ghost-btn">MENÚ PRINCIPAL</button></div><span class="ending-end">FARO:09 — FIN DEL PRÓLOGO</span></div></div>
+
+    <div id="mobileControls" class="mobile-controls" hidden><div class="direction-pad"><button id="moveLeft" aria-label="Mover a la izquierda">◀</button><button id="moveRight" aria-label="Mover a la derecha">▶</button></div><button id="mobileInteract" class="action-pad" aria-label="Interactuar">E <small>USAR</small></button></div>
+    <div id="toast" class="toast" hidden></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
