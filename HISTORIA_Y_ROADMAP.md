@@ -54,6 +54,5 @@ No existe garantía de ingresos; el mayor riesgo inicial es dedicar muchos meses
 
 ## Alcance real de esta versión
 
-✅ Cuatro escenas dibujadas por código; protagonista controlable; historia breve; pistas, dos acertijos, bitácora, guardado local, dos finales, audio básico y controles móviles.
-
-❌ Todavía no incluye arte de personajes con animación profesional, voces grabadas, banda sonora orquestada, cinemáticas renderizadas, campaña extensa, logros en la nube, funciones online ni monetización.
+Cuatro escenas dibujadas por código; protagonista controlable; historia breve; pistas, dos acertijos, bitácora, guardado local, dos finales, audio básico y controles móviles.
+Todavía no incluye arte de personajes con animación profesional, voces grabadas, banda sonora orquestada, cinemáticas renderizadas, campaña extensa, logros en la nube, funciones online ni monetización.
