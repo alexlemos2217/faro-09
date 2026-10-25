@@ -9,7 +9,7 @@
 
 ![FARO:09 — Menú principal](docs/portada-desktop.png)
 
-**[Jugar el prólogo](#-cómo-jugar) · [Historia](#-la-historia) · [Características](#-qué-incluye) · [Publicación](#-publicar-en-netlify)**
+**[Jugar el prólogo](#-cómo-jugar) · [Historia](#-la-historia) · [Características](#-qué-incluye)**
 
 ![HTML5](https://img.shields.io/badge/HTML5-141d29?style=flat-square&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-141d29?style=flat-square&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-141d29?style=flat-square&logo=javascript&logoColor=white) ![Canvas](https://img.shields.io/badge/Canvas_2D-141d29?style=flat-square&logoColor=white) ![Prototipo](https://img.shields.io/badge/Estado-Demo_jugable-66ceb2?style=flat-square)
 
