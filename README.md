@@ -104,11 +104,7 @@ También podés usar el despliegue manual arrastrando la carpeta que contiene `i
 
 ## ◇ Estado del proyecto y futuro comercial
 
-**Esta entrega es una demo vertical jugable**, no un videojuego comercial terminado. Valida la premisa narrativa, el tono visual y el ciclo de exploración, investigación y decisiones.
-
-Para llevarla a una venta real: ampliar la campaña, diseñar animaciones de personajes profesionales, desarrollar más rompecabezas con variedad, crear música original producida, grabar voces si el presupuesto lo permite, agregar accesibilidad y opciones gráficas, preparar pruebas con jugadores, optimizar rendimiento y estudiar la viabilidad comercial y legal de la marca.
-
-La propuesta de producto, narrativa futura y etapas de producción están en **[HISTORIA_Y_ROADMAP.md](HISTORIA_Y_ROADMAP.md)**.
+**Esta entrega es una demo vertical jugable**, no un videojuego comercial terminado. Valida la premisa narrativa, el tono visual y el ciclo de exploración, investigación y decisiones.**.
 
 ---
 
