@@ -92,16 +92,6 @@ faro09/
 
 **Persistencia:** `localStorage`; el progreso se conserva en el navegador/dispositivo en el que se jugó, pero no se sincroniza entre dispositivos.
 
-## ◇ Publicar en Netlify
-
-1. Creá un **nuevo repositorio** para el juego. No reemplaces Pixel Rush ni KYRALUME.
-2. Subí los archivos de este directorio a la raíz del repositorio.
-3. En Netlify seleccioná **Add new project → Import an existing project**.
-4. Conectá GitHub, elegí el repositorio y configurá como **Publish directory** la raíz `.`. No necesitás **Build command**.
-5. Publicá. Los próximos commits en la rama configurada podrán desplegarse automáticamente.
-
-También podés usar el despliegue manual arrastrando la carpeta que contiene `index.html` dentro del proyecto de Netlify.
-
 ## ◇ Estado del proyecto y futuro comercial
 
 **Esta entrega es una demo vertical jugable**, no un videojuego comercial terminado. Valida la premisa narrativa, el tono visual y el ciclo de exploración, investigación y decisiones.**.
